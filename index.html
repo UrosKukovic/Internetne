@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Kukovič Uroš">
+        <meta name="description" content="To je samo testna spletna stran">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Projekt IT_test1</title>
+        <link rel = "stylesheet" href="style.css">
+
+        
+
+    </head>
+    <body onload="init();">
+       
+        <section class="ozadje_notranjost">
+
+            <header class="header"></header>
+        
+            <section class="Naslov_container">
+                <div class="naslov"><span class="highlight naslov">Nadzorna </span>plošča za klimo</div>
+                <button class="temna-tema">
+                    <span class="kroglica"></span>
+                </button>
+            </section>
+            
+            <section class="Glavni_container">
+                <section class="graf_temp_celota container podlaga">
+                    <div class="temp_flex">
+                        <p class="p1">Temperatura v sobi: </p><div class="p1" id="temperature"></div> <p class="p1">°C</p>
+                    </div>
+                        <div class="graf_temp graf" id="graf_temp1">
+                            <div id="container" style="height: 320px; min-width: 320px"></div><!-- this the placeholder for the chart-->
+                        </div>
+                </section>
+
+                <section class="graf_vlaga_celota container podlaga">
+                    <div class="vlaga_flex">
+                        <p class="p1">Vlažnost v sobi: </p><div class="p1" id="humidity"></div> <p class="p1">%</p>
+                    </div>
+                    <div class="graf_vlaga graf" id="graf_vlaga1">
+                        
+                    </div>
+                </section>
+
+                <section class="graf_kakovost_celota container podlaga">
+                    <div class="kakovost_flex">
+                        <p class="p1">Tekst iz oblačka: </p><div class="p1" id="txt"></div> <p class="p1"></p> 
+                    </div>
+                    <div class="graf_kakovost graf" id="graf_kakovost1">
+                        <div id="container" style="height: 320px; min-width: 320px"></div><!-- this the placeholder for the chart-->
+                    </div>
+                </section>
+
+                <section class="vklop_izklop container">
+                    
+                    <button class="Gumb_vklop_izklop">VKLOP</button>
+                </section>   
+
+                <section class="stanje_klime container">
+                    <div class="tekst_stanje">STANJE KLIME</div>
+                    <img class="slika_klima" src="" alt="Klima" width="412px", height="412px">
+                </section>   
+
+            </section>
+
+        </section>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript">    </script> 
+        
+        
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript">    </script> 
+        
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="http://code.highcharts.com/stock/highstock.js"></script>
+        <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+
+        <!-- chatbot -->
+                                
+        <script type='text/javascript'>
+            (function(I, L, T, i, c, k, s) {if(I.iticks) return;I.iticks = {host:c, settings:s, clientId:k, cdn:L, queue:[]};var h = T.head || T.documentElement;var e = T.createElement(i);var l = I.location;e.async = true;e.src = (L||c)+'/client/inject-v2.min.js';h.insertBefore(e, h.firstChild);I.iticks.call = function(a, b) {I.iticks.queue.push([a, b]);};})(window, 'https://cdn.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', 'dmaYhy4t9gb7T3XKr_c', {});
+        </script>
+                
+        
+        <script src="mqtt.js"></script>
+        <script src="script.js"></script>
+        
+    </body>
+</html>
