@@ -175,11 +175,6 @@ body {
 }
 
 
-/*Črte za grid*/
-.container {
-    /*border-style: dashed;*/
-}
-
 /*Definiranje polja v glavnem containerju in njegovih elementov*/
 .Glavni_container {
     display: grid;
