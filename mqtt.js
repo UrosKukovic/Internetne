@@ -195,6 +195,7 @@ $(document).ready(function() {
         chart: {
             renderTo: 'container',
             defaultSeriesType: 'spline'
+            
         },
         title: {
             text: 'Graf izmerjenih okoljskih parametrov v prostoru 1'

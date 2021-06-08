@@ -14,88 +14,183 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-    
-    
 }
 
+/*Nastavitve za glavo*/
 .header {
     height:70px;
     background-color: #585858;
-    border-bottom: solid 10px #c5e7bc;
+    border-bottom: solid 7px #c5e7bc;
 }
+
+
 /*Celotni tekst*/
 .tekst {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 35px;
-    font-weight: 550;
+    font-weight: 500;
+    
+}
+
+
+/*Prilagoditev zaslona za mobilne naprave in naprave z majhnim zaslonom*/
+@media only screen and (max-width: 500px) {
+
+    /*Nastavitve za glavo*/
+    .header {
+        height:50px;
+        background-color: #585858;
+        border-bottom: solid 7px #c5e7bc;
+    }
+
+    .ozadje_notranjost{
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        width: 80%;
+    }
+
+    /*Nastavitve za kontainer od naslova*/
+    .Naslov_container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+    
+    }
+
+    /*Poudarek za besedo "Nadzorna"*/
+    .highlight {
+        color: #5baa3f;
+    
+    }
+
+    /*Nastavitve za naslov font*/
+    .naslov {
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+
+
+    #container {
+        height: 200px; 
+        min-width: 100px;
+        max-width: 300px;
+    }
+
+    /*Nastavitve za gumb vklop/izklop*/
+    .Gumb_vklop_izklop {
+        border-style: none;
+        background-color: #585858;
+        color:rgb(255, 255, 255);
+        font-weight: bold;
+        border-radius: 7px;
+        font-size: 20px;
+        width: 25%;
+        height: 12.5%;
+        
+    }
+
+    /*Koregiranje položaja outputa temperature iz JS*/
+    .temp_flex {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    /*Nastavitve fonta za output iz JS za temp, vlago, tekst*/
+    .p1 {
+        font-size: 20px;
+        font-weight: 500;
+        color: #585858;
+        margin-left: 7px;
+        
+    }
+
+    /*Položaj celotnega containerja za gumb*/
+    .vklop_izklop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5em;
+        justify-content: center;
+    }
+
+    /*Definiranje kontajnerja za stanje klime in vse elemente v kontajnerju*/
+    .stanje_klime {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        
+         
+    }
+
+    /*Nastavitve za tekst znotraj .stanje_klime*/
+    .tekst_stanje {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    
+    /*Definiranje položaja grafa temperature*/
+    .graf_temp {
+        display: flex;
+        justify-content: center;
+        margin-top: 2em;
+        
+        
+    }
+
 
 }
-.stanje_klime {
+
+
+
+/*Prilagoditev zaslona za široke zaslone (landscape) */
+@media only screen and (min-width: 900px) {
+
+    
+    /*Nastavitve za kontainer od naslova*/
+.Naslov_container {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    border-style: solid;
+    align-items: center;
     
-
+    margin-bottom: 5rem;
     
 }
-.tekst_stanje {
-    font-size: 20px;
-    font-weight: bold;
-    
+/*Poudarek za besedo "Nadzorna"*/
+.highlight {
+    color: #5baa3f;
     
 }
 
 
-.siva {
-    color: #585858;
-    margin-left: 5%;
-}
-
- .highlight {
-     color: #5baa3f;
-     
- }
-
- .Naslov_container {
-     display: flex;
-     align-items: center;
-     margin-bottom: 5rem;
-     
- }
-
- .temna-tema
- {
-     display:flex;
-     width: 60px;
-     height: 25px;
-     border-radius: 25px;
-     background-color: #093365;
-     border: none;
-     align-items: center;
-     justify-content: flex-start;
-     
-     
-     
-     
- }
- 
- .kroglica
- {
-     
-     align-items: center;
-     height:20px;
-     width: 20px;
-     border-radius: 50%;
-     background-color: #fff;
-     margin: 2.5px;
- }
-
+/*Nastavitve za naslov font*/
 .naslov {
     font-weight: bold;
     font-size: 50px;
     
+}
+
+
+/*Črte za grid*/
+.container {
+    /*border-style: dashed;*/
+}
+
+/*Definiranje polja v glavnem containerju in njegovih elementov*/
+.Glavni_container {
+    display: grid;
+    grid-column-gap: 2em;
+    max-width: auto;
+    grid-template-columns: 3fr 2fr;
+    grid-auto-rows: minmax(auto, auto);
+    grid-template-areas:
+    "A1 A2"
+    "B1 B2"
+    "C1 C2" ;
 }
 
 /*Velikost prostora za grafe*/
@@ -106,47 +201,30 @@ body {
     margin-left: 5%;
 }
 
-/*Črte za grid
-.container {
-    /*border-style: dashed;*/
-
-
-/*Definiranje polja v glavnem containerju in njegove elemente*/
-.Glavni_container {
-    display: grid;
-    grid-column-gap: 2em;
-    max-width: 1000px;
-    grid-template-columns: 3fr 2fr;
-    grid-auto-rows: minmax(auto, auto);
-    grid-template-areas:
-    "A1 A2"
-    "B1 B2"
-    "C1 C2" ;
-    
-    
-}
-
+/*Barva podlage za grafe*/
 .podlaga{
     background-color: #f0f6ee;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 }
+
+/*Definiranje razvrstitve znotraj grafa temperature*/
 .graf_temp_celota {
     grid-area: A1;
     display: grid;
     grid-auto-rows: minmax(auto, auto);
     grid-template-areas:
-    "A1 A2"
-    "B1 B1";
+    "A1"
+    "B1";
     
 }
 
+/*Definiranje položaja teksta grafa temperature*/
 .temp_tekst {
     grid-area: A1;
-    
-    
-    
 }
 
-
+/*Definiranje položaja grafa temperature*/
 .graf_temp {
     display: flex;
     grid-area: B1;
@@ -155,24 +233,20 @@ body {
     
 }
 
-.graf_vlaga_celota {
-    grid-area: B1;
-    display: grid;
-    grid-auto-rows: minmax(auto, auto);
-    grid-template-areas:
-    "A1"
-    "B1";
+#container {
+    height: 320px; 
+    min-width: 320px;
+    
 }
 
-.vlaga_tekst {
-    grid-area: A1;
-}
-
+/*Koregiranje položaja outputa temperature iz JS*/
 .temp_flex {
     display: flex;
     align-items: flex-end;
 }
 
+
+/*Nastavitve fonta za output iz JS za temp, vlago, tekst*/
 .p1 {
     font-size: 30px;
     font-weight: 500;
@@ -180,41 +254,23 @@ body {
     margin-left: 10px;
 }
 
-
-.graf_vlaga {
-    grid-area: B1;
-    display:flex;
-    justify-content:center;
-    align-items: flex-end;
+/*Nastavitve fonta za tekst znotraj grafov*/
+.siva {
+    color: #585858;
+    margin-left: 5%;
 }
 
-.vlaga_flex {
+/*Položaj celotnega containerja za gumb*/
+.vklop_izklop {
     display: flex;
-    align-items: flex-end;
-}
-.graf_kakovost_celota {
-    grid-area: C1;
-    display: grid;
-    grid-auto-rows: minmax(auto, auto);
-    grid-template-areas:
-    "A1 A2"
-    "B1 B1";
-    
+    grid-area: A2;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 10em;
 }
 
-.kakovost_tekst {
-    grid-area: A1;
-}
-
-
-
-.graf_kakovost {
-    grid-area: B1;
-    display:flex;
-    justify-content:center;
-    align-items: flex-end;
-}
-
+/*Nastavitve za gumb vklop/izklop*/
 .Gumb_vklop_izklop {
     border-style: none;
     background-color: #585858;
@@ -223,27 +279,30 @@ body {
     border-radius: 7px;
     font-size: 20px;
     width: 25%;
-    height: 12.5%;
+    height: 22.5%;
     
 }
 
-
-
-.vklop_izklop {
+/*Definiranje kontajnerja za stanje klime in vse elemente v kontajnerju*/
+.stanje_klime {
     display: flex;
+    grid-area: B2;
     flex-direction: column;
     align-items: center;
-    border-style: dotted;
-    padding-top: 20px;
-    
-    
-    
-    
+    margin-top: -10em;
 }
 
+/*Nastavitve za tekst znotraj .stanje_klime*/
+.tekst_stanje {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/*Nastavitve ozadja znotraj body*/
 .ozadje_notranjost{
     background: rgb(255, 255, 255);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
 }
 
 
+}
